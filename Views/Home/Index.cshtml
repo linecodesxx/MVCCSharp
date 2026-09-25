@@ -22,3 +22,29 @@
         </ul>
     </div>
 </div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-lg-8 col-md-10">
+        <h2>Добавить книгу</h2>
+
+        @if (ViewData["book"] is Book book)
+        {
+            <ul class="list-group mb-3">
+                <li class="list-group-item">Название: @book.Title</li>
+                <li class="list-group-item">Автор: @book.Author</li>
+            </ul>
+        }
+
+        <form method="post">
+            <div class="mb-3">
+                <label for="title" class="form-label">Название книги:</label>
+                <input type="text" name="title" id="title" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">Автор:</label>
+                <input type="text" name="author" id="author" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+    </div>
+</div>
